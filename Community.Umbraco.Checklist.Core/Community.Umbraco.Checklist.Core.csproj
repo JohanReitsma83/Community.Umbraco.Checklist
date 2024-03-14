@@ -7,7 +7,7 @@
 
 		<Title>Community.Umbraco.Checklist.Core</Title>
 		<Description>Core library for checklist dashboard to add custom C# triggers to reset checklist item</Description>
-		<Version>1.0.1</Version>
+		<Version>1.0.2</Version>
 		<Authors>Johan Reitsma</Authors>
 		<PackageProjectUrl>https://github.com/JohanReitsma83/Community.Umbraco.Checklist</PackageProjectUrl>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
