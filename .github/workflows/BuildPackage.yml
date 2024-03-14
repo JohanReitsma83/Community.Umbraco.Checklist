@@ -1,0 +1,37 @@
+name: Build Package Release
+
+env:
+  OUTPUT: ./Output
+  CONFIG: Release
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+
+    runs-on: windows-latest
+
+    steps:      
+    - uses: actions/checkout@v2  
+      
+    - name: Set up .NET Core
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: '8.x.x'
+        include-prerelease: true
+      
+    - name: Restore dependencies
+      run: dotnet restore ./Community.Umbraco.Checklist.sln
+
+    - name: Build
+      run: dotnet build ./Community.Umbraco.Checklist.sln --configuration ${{ env.CONFIG }} --no-restore
+
+    - name: Create NuGet packages
+      run: dotnet pack ./Community.Umbraco.Checklist.sln -c ${{ env.CONFIG }} --no-build -o ${{ env.OUTPUT }}
+
+    - name: upload-artifacts
+      uses: actions/upload-artifact@v2
+      with:
+        name: Build-Results
+        path: ${{ env.OUTPUT }}/**/*
