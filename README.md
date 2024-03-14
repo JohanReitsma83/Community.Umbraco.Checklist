@@ -1,1 +1,1 @@
-# TRES.Umbraco.Checklist
+# Community.Umbraco.Checklist

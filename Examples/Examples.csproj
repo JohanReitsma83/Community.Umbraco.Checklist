@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Community.Umbraco.Checklist.Core\Community.Umbraco.Checklist.Core.csproj" />
+  </ItemGroup>
+
+	<ItemGroup Condition="'$(TargetFramework)' == 'net6.0'">
+		<PackageReference Include="Umbraco.Cms.Web.Website" Version="10.7.0" />
+		<PackageReference Include="Umbraco.Cms.Web.BackOffice" Version="10.7.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="HealthChecks\Marketing\" />
+	</ItemGroup>
+
+</Project>

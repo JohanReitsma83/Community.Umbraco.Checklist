@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<language alias="en">
+	<area alias="dashboardTabs">
+		<key alias="Community.Umbraco.Checklist">Checklist</key>
+	</area>
+</language>

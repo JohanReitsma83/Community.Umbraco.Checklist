@@ -1,0 +1,56 @@
+[
+  {
+	"name": "Website Performance Test",
+	"uniqueAlias": "9d8b78a2-4bf0-4dc7-9178-9b8e2ff12655",
+	"description": "Website is tested for performance by service (WCAG + Pagespeed) and is OK",
+	"category": "Manager"
+  },
+  {
+	"name": "Website Domainnames",
+	"uniqueAlias": "ed93a5b9-6b3c-4d29-842f-c13b70e1f7aa",
+	"description": "Domain names are known and configured for environment",
+	"category": "Manager"
+  },
+  {
+	"name": "Mail Formatted",
+	"uniqueAlias": "c0d37646-6d5b-42e2-b675-9e07e13de45b",
+	"description": "Test mails are correctly formatted in the style of the customer",
+	"category": "Manager"
+  },
+  {
+	"name": "mailIsReceived",
+	"uniqueAlias": "bf6d7454-7509-4b46-9d37-9181ec3f3e56",
+	"description": "Test mails are received by the customer",
+	"category": "Manager"
+  },
+  {
+	"name": "User access to CMS",
+	"uniqueAlias": "52afac58-c2c7-4f0c-8e3c-5b0a0b7d101d",
+	"description": "Does everybody have access to CMS with correct roles?",
+	"category": "Manager"
+  },
+  {
+	"name": "GTM / GA",
+	"uniqueAlias": "fc367b4e-2ff6-4e88-8ea3-204b78dbcb62",
+	"description": "GTM / GA code provided and configured",
+	"category": "Marketing"
+  },
+  {
+	"name": "GA search params",
+	"uniqueAlias": "63a13276-6d1d-4dbd-9dd0-8b6b36f2b0ec",
+	"description": "GA search params are configured",
+	"category": "Marketing"
+  },
+  {
+	"name": "DNS Adjusted",
+	"uniqueAlias": "2f20e593-4bd1-4b2f-a90a-8cb49f9bf89f",
+	"description": "DNS Adjusted before go-live date?",
+	"category": "Service"
+  },
+  {
+	"name": "404 Configured",
+	"uniqueAlias": "c56b5833-97f4-4e05-a426-839003d5e62a",
+	"description": "404 configured within appsettings or middleware?",
+	"category": "Developer"
+  }
+]

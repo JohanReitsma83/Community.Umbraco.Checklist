@@ -1,0 +1,21 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <CommunityUmbracoChecklistContentFilesPath>$(MSBuildThisFileDirectory)..\App_Plugins\Community.Umbraco.Checklist\**\*.*</CommunityUmbracoChecklistContentFilesPath>
+  </PropertyGroup>
+
+  <Target Name="CopyCommunityUmbracoChecklistAssets" BeforeTargets="Build">
+    <ItemGroup>
+      <CommunityUmbracoChecklistContentFiles Include="$(CommunityUmbracoChecklistContentFilesPath)" />
+    </ItemGroup>
+    <Message Text="Copying Community.Umbraco.Checklist files: $(CommunityUmbracoChecklistContentFilesPath) - #@(CommunityUmbracoChecklistContentFiles->Count()) files" Importance="high" />
+    <Copy SourceFiles="@(CommunityUmbracoChecklistContentFiles)" DestinationFiles="@(CommunityUmbracoChecklistContentFiles->'$(MSBuildProjectDirectory)\App_Plugins\Community.Umbraco.Checklist\%(RecursiveDir)%(Filename)%(Extension)')" SkipUnchangedFiles="true" />
+  </Target>
+
+  <Target Name="ClearCommunityUmbracoChecklistAssets" BeforeTargets="Clean">
+    <ItemGroup>
+      <CommunityUmbracoChecklistDir Include="$(MSBuildProjectDirectory)\App_Plugins\Community.Umbraco.Checklist\" />
+    </ItemGroup>
+    <Message Text="Clear old Community.Umbraco.Checklist data" Importance="high" />
+    <RemoveDir Directories="@(CommunityUmbracoChecklistDir)" />
+  </Target>
+</Project>

@@ -1,0 +1,53 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
+	<PropertyGroup>
+		<TargetFrameworks>net6.0;net8.0</TargetFrameworks>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<ContentTargetFolders>.</ContentTargetFolders>
+
+		<Title>Community.Umbraco.Checklist</Title>
+		<Description>...</Description>
+		<Version>1.0.0</Version>
+		<Authors>Johan Reitsma</Authors>
+		<PackageProjectUrl>https://umbraco.com</PackageProjectUrl>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<TreatWarningsAsErrors>True</TreatWarningsAsErrors>
+	</PropertyGroup>
+
+
+	<!--Include NuGet dependencies-->
+	<ItemGroup Condition="'$(TargetFramework)' == 'net6.0'">
+		<PackageReference Include="Umbraco.Cms.Web.Website" Version="10.8.0" />
+		<PackageReference Include="Umbraco.Cms.Web.BackOffice" Version="10.8.0" />
+	</ItemGroup>
+	<ItemGroup Condition="'$(TargetFramework)' == 'net8.0'">
+		<PackageReference Include="Umbraco.Cms.Web.Website" Version="13.0.0" />
+		<PackageReference Include="Umbraco.Cms.Web.BackOffice" Version="13.0.0" />
+	</ItemGroup>
+
+	<PropertyGroup>
+		<!-- Razor files are needed for the backoffice to work correctly -->
+		<CopyRazorGenerateFilesToPublishDirectory>true</CopyRazorGenerateFilesToPublishDirectory>
+		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+	</PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="App_Plugins\Community.Umbraco.Checklist\**" ExcludeFromSingleFile="true" CopyToPublishDirectory="Always" />
+    <None Include="buildTransitive\**" Pack="true" PackagePath="buildTransitive" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Handlers\RegisterChecklistItemStatusNotificationHandler.cs" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <ProjectReference Include="..\Community.Umbraco.Checklist.Core\Community.Umbraco.Checklist.Core.csproj" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <Folder Include="App_Plugins\Community.Umbraco.Checklist\lang\" />
+  </ItemGroup>
+
+</Project>

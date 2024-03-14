@@ -1,0 +1,151 @@
+﻿<style>
+	hr {
+		margin: 5px 0;
+		border: 1px solid #d8d7d9;
+	}
+</style>
+
+<div id="accessrestriction-dashboard" class="welcome-dashboard" ng-controller="Community.ChecklistController as vm">
+
+	<div class="umb-panel-group__details-group">
+		<div class="umb-panel-group__details-group-title">
+			<div class="umb-panel-group__details-group-name">
+				<H2>Checklist Report</H2>
+			</div>
+		</div>
+
+
+		<div class="umb-panel-group__details-checks">
+			<div class="umb-panel-group__details-check">
+				<div class="umb-panel-group__details-status">
+					<div class="umb-panel-group__details-status-content">
+						<uui-table aria-label="Status Report" aria-describedby="#some-element-id">
+							<!--uui-table-column style="width: 20%;"></!--uui-table-column>-->
+							<uui-table-column style="width: 25%;"></uui-table-column>
+							<uui-table-column style="width: 25%;"></uui-table-column>
+							<uui-table-column style="width: 25%;"></uui-table-column>
+							<uui-table-column style="width: 25%;"></uui-table-column>
+
+							<uui-table-head>
+								<!--uui-table-head-cell>UpTime</!--uui-table-head-cell>-->
+								<uui-table-head-cell>Errors</uui-table-head-cell>
+								<uui-table-head-cell>Warnings</uui-table-head-cell>
+								<uui-table-head-cell>Success</uui-table-head-cell>
+								<uui-table-head-cell>Total</uui-table-head-cell>
+							</uui-table-head>
+
+							<uui-table-row>
+
+								<uui-table-cell clip-text ng-show="vm.statusReport.errors === 0">
+									<uui-avatar name="0" style="color: white; background-color: red; width: var(--uui-size-40); height: var(--uui-size-40); font-size: var(--uui-size-10);"></uui-avatar>
+								</uui-table-cell>
+								<uui-table-cell clip-text ng-show="vm.statusReport.errors > 0">
+									<uui-loader-circle progress="{{vm.statusReport.errors}}" style="color: red; width: var(--uui-size-40); height: var(--uui-size-40); font-size: var(--uui-size-40);" show-progress></uui-loader-circle>
+								</uui-table-cell>
+								<uui-table-cell clip-text ng-show="vm.statusReport.warnings === 0">
+									<uui-avatar name="0" style="color: white; background-color: orange; width: var(--uui-size-40); height: var(--uui-size-40); font-size: var(--uui-size-10);"></uui-avatar>
+								</uui-table-cell>
+								<uui-table-cell clip-text ng-show="vm.statusReport.warnings > 0">
+									<uui-loader-circle progress="{{vm.statusReport.warnings}}" style="color: orange; width: var(--uui-size-40); height: var(--uui-size-40); font-size: var(--uui-size-40);" show-progress></uui-loader-circle>
+								</uui-table-cell>
+								<uui-table-cell clip-text ng-show="vm.statusReport.success === 0">
+									<uui-avatar name="0" style="color: white; background-color: green; width: var(--uui-size-40); height: var(--uui-size-40); font-size: var(--uui-size-10);"></uui-avatar>
+								</uui-table-cell>
+								<uui-table-cell clip-text ng-show="vm.statusReport.success > 0">
+									<uui-loader-circle progress="{{vm.statusReport.success}}" style="color: green; width: var(--uui-size-40); height: var(--uui-size-40); font-size: var(--uui-size-40);" show-progress></uui-loader-circle>
+								</uui-table-cell>
+								<uui-table-cell clip-text>
+									<uui-loader-circle progress="{{vm.statusReport.total}}" style="width: var(--uui-size-40); height: var(--uui-size-40); font-size: var(--uui-size-40);" show-progress></uui-loader-circle>
+								</uui-table-cell>
+							</uui-table-row>
+
+						</uui-table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+
+	<div class="umb-panel-group__details-group" ng-repeat="group in vm.categories">
+		<div class="umb-panel-group__details-group-title">
+			<div class="umb-panel-group__details-group-name">
+				<h3>{{group.category}}</h3>
+			</div>
+		</div>
+		<div class="umb-panel-group__details-checks">
+			<div class="umb-panel-group__details-check">
+				<div class="umb-panel-group__details-status">
+					<div class="umb-panel-group__details-status-content">
+						<uui-table aria-label="ChecklistTable table">
+
+							<!-- Apply styles to the uui-table-column to style the columns. You must have the same number of this elements as you have columns -->
+							<uui-table-column style="width: 5%;"></uui-table-column>
+							<uui-table-column style="width: 10%;"></uui-table-column>
+							<uui-table-column style="width: 20%;"></uui-table-column>
+							<uui-table-column style="width: 10%;"></uui-table-column>
+							<uui-table-column style="width: 15%;"></uui-table-column>
+							<uui-table-column style="width: 30%;"></uui-table-column>
+							<uui-table-column style="width: 10%;"></uui-table-column>
+
+							<uui-table-head>
+								<uui-table-head-cell>Status</uui-table-head-cell>
+								<uui-table-head-cell>Name</uui-table-head-cell>
+								<uui-table-head-cell>Description</uui-table-head-cell>
+								<uui-table-head-cell>Performed by</uui-table-head-cell>
+								<uui-table-head-cell>Performed on</uui-table-head-cell>
+								<uui-table-head-cell>Messages</uui-table-head-cell>
+								<uui-table-head-cell>Actions</uui-table-head-cell>
+							</uui-table-head>
+
+							<uui-table-row ng-repeat="entry in group.entries">
+								<uui-table-cell>
+									<uui-icon style="color: red; width:1.8em" ng-show="entry.lastStatus === 0">
+										<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm121.6 313.1c4.7 4.7 4.7 12.3 0 17L338 377.6c-4.7 4.7-12.3 4.7-17 0L256 312l-65.1 65.6c-4.7 4.7-12.3 4.7-17 0L134.4 338c-4.7-4.7-4.7-12.3 0-17l65.6-65-65.6-65.1c-4.7-4.7-4.7-12.3 0-17l39.6-39.6c4.7-4.7 12.3-4.7 17 0l65 65.7 65.1-65.6c4.7-4.7 12.3-4.7 17 0l39.6 39.6c4.7 4.7 4.7 12.3 0 17L312 256l65.6 65.1z"></path></svg>
+									</uui-icon>
+									<uui-icon style="color: orange;width:1.8em" ng-show="entry.lastStatus === 1">
+										<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M256 8C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm0 110c23.196 0 42 18.804 42 42s-18.804 42-42 42-42-18.804-42-42 18.804-42 42-42zm56 254c0 6.627-5.373 12-12 12h-88c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h12v-64h-12c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h64c6.627 0 12 5.373 12 12v100h12c6.627 0 12 5.373 12 12v24z"></path></svg>
+									</uui-icon>
+									<uui-icon style="color: green;width:1.8em" ng-show="entry.lastStatus === 2">
+										<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"></path></svg>
+									</uui-icon>
+
+								</uui-table-cell>
+								<uui-table-cell>
+									<div ng-bind-html="entry.name"></div>
+								</uui-table-cell>
+								<uui-table-cell>
+									<div ng-bind-html="entry.description"></div>
+								</uui-table-cell>
+								<uui-table-cell>
+									{{ entry.userInfo.name }}
+								</uui-table-cell>
+								<uui-table-cell>{{ entry.lastRun | date:'yyyy-MM-dd'}}<br />{{ entry.lastRun | date:'HH:mm:ss'}}</uui-table-cell>
+
+
+
+								<uui-table-cell ng-show="entry.runType === 0" ng-hide="entry.runType == 1">
+									<div ng-bind-html="entry.messages"></div>
+								</uui-table-cell>
+								<uui-table-cell ng-show="entry.runType == 1">
+									<div ng-bind-html="entry.messages"></div>
+								</uui-table-cell>
+
+								<uui-table-cell ng-show="entry.runType === 0" ng-hide="entry.runType == 1">
+									<uui-button type="" label="{{entry.messages}}" state="" look="primary" color="positive" ng-click="vm.approve(entry)" ng-hide="entry.lastStatus == 2">Approve</uui-button>
+								</uui-table-cell>
+								<uui-table-cell ng-show="entry.runType == 1">
+									<uui-button type="" label="{{entry.messages}}" state="" look="primary" color="positive" ng-click="vm.refresh()" ng-hide="entry.lastStatus == 2"> Refresh</uui-button>
+								</uui-table-cell>
+
+							</uui-table-row>
+
+						</uui-table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
