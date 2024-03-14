@@ -22,13 +22,13 @@ jobs:
         include-prerelease: true
       
     - name: Restore dependencies
-      run: dotnet restore ./Community.Umbraco.Checklist.sln
+      run: dotnet restore ./Community.Umbraco.Checklist.Package.sln
 
     - name: Build
-      run: dotnet build ./Community.Umbraco.Checklist.sln --configuration ${{ env.CONFIG }} --no-restore
+      run: dotnet build ./Community.Umbraco.Checklist.Package.sln --configuration ${{ env.CONFIG }} --no-restore
 
     - name: Create NuGet packages
-      run: dotnet pack ./Community.Umbraco.Checklist.sln -c ${{ env.CONFIG }} --no-build -o ${{ env.OUTPUT }}
+      run: dotnet pack ./Community.Umbraco.Checklist.Package.sln -c ${{ env.CONFIG }} --no-build -o ${{ env.OUTPUT }}
       
     - name: Push packages to NuGet
       run: dotnet nuget push "**/*.nupkg" -k ${{ secrets.NUGET_DEPLOY_KEY }} -s https://api.nuget.org/v3/index.json

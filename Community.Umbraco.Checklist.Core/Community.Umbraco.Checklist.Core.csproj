@@ -5,22 +5,19 @@
 		<ImplicitUsings>enable</ImplicitUsings>
 		<ContentTargetFolders>.</ContentTargetFolders>
 
-		<Title>Community.Umbraco.Checklist</Title>
-		<Description>...</Description>
-		<PackageTags>umbraco checklist package</PackageTags>
-		<Version>1.0.0</Version>
+		<Title>Community.Umbraco.Checklist.Core</Title>
+		<Description>Core library for checklist dashboard to add custom C# triggers to reset checklist item</Description>
+		<Version>1.0.1</Version>
 		<Authors>Johan Reitsma</Authors>
-		<PackageProjectUrl>https://umbraco.com</PackageProjectUrl>
+		<PackageProjectUrl>https://github.com/JohanReitsma83/Community.Umbraco.Checklist</PackageProjectUrl>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
 		<TreatWarningsAsErrors>True</TreatWarningsAsErrors>
 	</PropertyGroup>
 
-
-
 	<!--Include NuGet dependencies-->
 	<ItemGroup Condition="'$(TargetFramework)' == 'net6.0'">
-		<PackageReference Include="Umbraco.Cms.Web.Website" Version="10.7.0" />
-		<PackageReference Include="Umbraco.Cms.Web.BackOffice" Version="10.7.0" />
+		<PackageReference Include="Umbraco.Cms.Web.Website" Version="10.8.0" />
+		<PackageReference Include="Umbraco.Cms.Web.BackOffice" Version="10.8.0" />
 	</ItemGroup>
 	<ItemGroup Condition="'$(TargetFramework)' == 'net8.0'">
 		<PackageReference Include="Umbraco.Cms.Web.Website" Version="13.0.0" />

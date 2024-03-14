@@ -1,0 +1,25 @@
+{
+    "$schema": "https://marketplace.umbraco.com/umbraco-marketplace-schema.json",
+    "AuthorDetails": {
+      "Name": "Markus Johansson",
+      "Description": "Made by me and the Umbraco community.",
+      "Url": "https://www.enkelmedia.se/blogg",
+      "ImageUrl": ""
+    },
+    "Title": "The Dashboard",
+    "Description": "Checklist dashboard, shows directly the healtchecks and  manual checks you can configure.",
+    "DocumentationUrl": "https://github.com/JohanReitsma83/Community.Umbraco.Checklist/",
+    "IssueTrackerUrl": "https://github.com/JohanReitsma83/Community.Umbraco.Checklist/issues",
+    "Category": "Developer Tools",
+    "LicenseTypes": [ "Free" ],
+    "PackageType": "Package",
+    "Tags": [
+      "dashboard", "healtchecks", "Checklist"
+    ],
+    "Screenshots": [
+      {
+        "ImageUrl": "https://raw.githubusercontent.com/enkelmedia/TheDashboard/v11/dev/Docs/the-dashboard-screenshot.png",
+        "Caption": "healtchecks dashboard"
+      }
+    ]
+  }
