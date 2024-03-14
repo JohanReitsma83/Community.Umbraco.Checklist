@@ -1,5 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
 	<PropertyGroup>
+		<Id>Community.Umbraco.Checklist</Id>
 		<TargetFrameworks>net6.0;net8.0</TargetFrameworks>
 		<PublishRepositoryUrl>true</PublishRepositoryUrl>
 		<Nullable>enable</Nullable>
@@ -11,6 +12,7 @@
 		<Description>Basic Checklist Dashboard for checking healtchchecks and manual checks</Description>
 		<Version>1.0.2</Version>
 		<Authors>Johan Reitsma</Authors>
+		<PackageTags>Umbraco Developer Checklist Dashboard umbraco-marketplace</PackageTags>
 		<Copyright>Copyright © Johan Reitsma</Copyright>
 		<PackageProjectUrl>https://github.com/JohanReitsma83/Community.Umbraco.Checklist</PackageProjectUrl>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
