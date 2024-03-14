@@ -24,7 +24,8 @@ public class CheckListEntry
     public string Name { get; set; } = string.Empty;
 
     [Column("Description")]
-    public string Description { get; set; } = string.Empty;
+	[SpecialDbType(SpecialDbTypes.NVARCHARMAX)]
+	public string Description { get; set; } = string.Empty;
 
     [Column("LastExecutedBy")]
     public string? LastExecutedBy { get; set; }
@@ -49,7 +50,8 @@ public class CheckListEntry
     }
 
     [Column("Messages")]
-    public string? Messages { get; set; } = string.Empty;
+    [SpecialDbType(SpecialDbTypes.NVARCHARMAX)]
+	public string? Messages { get; set; } = string.Empty;
 
     [Column("RunType")]
     public int _runType { get; set; }
@@ -64,5 +66,6 @@ public class CheckListEntry
 
     [Column("State")]
     [NullSetting(NullSetting = NullSettings.Null)]
-    public string? State { get; set; } = string.Empty;
+    [SpecialDbType(SpecialDbTypes.NVARCHARMAX)]
+	public string? State { get; set; } = string.Empty;
 }
