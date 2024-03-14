@@ -1,4 +1,22 @@
-# Configuration Readme
+# Umbraco Dashboard for Health Checks and Checklist Items
+
+![Healthcheck dashboard](https://github.com/JohanReitsma83/Community.Umbraco.Checklist/blob/20a549706531d4806d891cb8d736d1f75492bbe2/documentation/screenshot-healthcheck.png?raw=true")
+Welcome to the Umbraco Dashboard project! This specialized dashboard is designed to seamlessly integrate with your Umbraco CMS, offering a comprehensive view of Umbraco's health checks alongside custom checklist items. Aimed at Umbraco Site builders, this dashboard serves as a basic location for monitoring the system's health and managing essential administrative tasks with ease.
+
+## Features
+
+- **Umbraco Health Checks:** Automatically displays the results of Umbraco's built-in health checks, ensuring your site's optimal performance and security.
+- **Custom Checklist Items:** Allows you add your own checklist items using a config file.
+- **Approval System:** Empowers Umbraco administrators to approve checklist items, facilitating quality deployment with tasks beyond code
+- **Simple Interface:** Designed with a simple overview so you see at login what the status of the application is.
+
+## Purpose
+
+The purpose of this dashboard is to enhance the Umbraco administration experience by providing a tool that not only leverages the existing health check features of Umbraco but also introduces a customizable checklist functionality. This integration aims t improve site maintenance efficiency, and ensure that all aspects of site health and administrative duties are addressed promptly and effectively.
+
+
+
+# Configuration
 
 ## JSON Configuration File Reference in appsettings
 
