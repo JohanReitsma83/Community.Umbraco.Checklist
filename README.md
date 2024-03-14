@@ -1,6 +1,6 @@
 # Umbraco Dashboard for Health Checks and Checklist Items
 
-![Healthcheck dashboard](/documentation/screenshot-healthcheck.png")
+![Healthcheck dashboard]("/documentation/screenshot-healthcheck.png")
 Welcome to the Umbraco Dashboard project! This specialized dashboard is designed to seamlessly integrate with your Umbraco CMS, offering a comprehensive view of Umbraco's health checks alongside custom checklist items. Aimed at Umbraco Site builders, this dashboard serves as a basic location for monitoring the system's health and managing essential administrative tasks with ease.
 
 ## Features
