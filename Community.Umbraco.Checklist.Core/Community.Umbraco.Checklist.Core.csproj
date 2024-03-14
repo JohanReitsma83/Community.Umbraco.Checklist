@@ -4,7 +4,7 @@
 		<Nullable>enable</Nullable>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<ContentTargetFolders>.</ContentTargetFolders>
-
+		<Id>Community.Umbraco.Checklist.Core</Id>
 		<Title>Community.Umbraco.Checklist.Core</Title>
 		<Description>Core library for checklist dashboard to add custom C# triggers to reset checklist item</Description>
 		<Version>1.0.3</Version>
