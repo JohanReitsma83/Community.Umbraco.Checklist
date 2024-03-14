@@ -6,11 +6,11 @@
 		<Nullable>enable</Nullable>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<ContentTargetFolders>.</ContentTargetFolders>
-		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+		<GeneratePackageOnBuild>False</GeneratePackageOnBuild>
 		<Authors>Johan Reitsma</Authors>
 		<Title>Community.Umbraco.Checklist</Title>
 		<Description>Basic Checklist Dashboard for checking healtchchecks and manual checks</Description>
-		<Version>1.0.4</Version>
+		<Version>1.0.5</Version>
 		<Authors>Johan Reitsma</Authors>
 		<PackageTags>Umbraco Developer Checklist Dashboard umbraco-marketplace</PackageTags>
 		<Copyright>Copyright © Johan Reitsma</Copyright>
