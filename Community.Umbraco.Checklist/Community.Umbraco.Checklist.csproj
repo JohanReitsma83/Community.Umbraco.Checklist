@@ -9,8 +9,8 @@
 		<GeneratePackageOnBuild>False</GeneratePackageOnBuild>
 		<Authors>Johan Reitsma</Authors>
 		<Title>Community.Umbraco.Checklist</Title>
-		<Description>Basic Checklist Dashboard for checking healtchchecks and manual checks</Description>
-		<Version>1.0.5</Version>
+		<Description>Basic Checklist Dashboard for performing healthchecks and manual checks</Description>
+		<Version>1.0.6</Version>
 		<Authors>Johan Reitsma</Authors>
 		<PackageTags>Umbraco Developer Checklist Dashboard umbraco-marketplace</PackageTags>
 		<Copyright>Copyright © Johan Reitsma</Copyright>

@@ -13,7 +13,7 @@ Welcome to the Umbraco Dashboard project! This specialized dashboard is designed
 
 ## Purpose
 
-The purpose of this dashboard is to enhance the Umbraco administration experience by providing a tool that not only leverages the existing health check features of Umbraco but also introduces a customizable checklist functionality. This integration aims t improve site maintenance efficiency, and ensure that all aspects of site health and administrative duties are addressed promptly and effectively.
+The purpose of this dashboard is to enhance the Umbraco administration experience by providing a tool that not only leverages the existing health check features of Umbraco but also introduces a customizable checklist functionality. This integration aims to improve site maintenance efficiency, and ensure that all aspects of site health and administrative duties are addressed promptly and effectively.
 
 
 
