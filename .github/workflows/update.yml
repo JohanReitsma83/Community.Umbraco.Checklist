@@ -1,0 +1,54 @@
+name: Auto Update Packages
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+    inputs:
+      package_list:
+        description: 'Comma-separated list of specific packages to update (optional)'
+        required: false
+
+jobs:
+  auto-update:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout the current branch
+        uses: actions/checkout@v3
+
+      - name: Install dotnet outdated
+        run: |
+          sudo apt-get install -y dotnet-sdk-8.0
+          dotnet tool install --global dotnet-outdated-tool
+
+      - name: Generate timestamp
+        id: timestamp
+        run: echo "TIMESTAMP=$(date +'%Y%m%d%H%M%S')" >> $GITHUB_ENV
+
+      - name: Create a new branch with timestamp
+        run: |
+          git checkout -b "auto-update-${{ env.TIMESTAMP }}"
+
+      - name: Update packages (conditional based on user input)
+        run: |
+          echo "Updating specific packages: ${{ github.event.inputs.package_list }}"
+            for package in $(echo "${{ github.event.inputs.package_list }}" | tr "," "\n"); do
+              dotnet outdated -u -vl Major --include $package 
+            done
+
+      - name: Check in all changes
+        run: |
+          git add .
+          git commit -m "Auto-update selected packages"
+          git push --set-upstream origin "auto-update-${{ env.TIMESTAMP }}"
+
+      - name: Create a PR to the main branch
+        uses: peter-evans/create-pull-request@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          base: main
+          head: "auto-update-${{ env.TIMESTAMP }}"
+          title: "Auto-update packages to minor versions"
+          body: "This PR updates selected packages to the latest minor versions."
